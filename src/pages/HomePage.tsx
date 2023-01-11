@@ -1,6 +1,12 @@
 import React from "react";
+import {getAuth, signOut} from "firebase/auth";
 
-const AddTodo = () => {
+export interface HomePageProps {
+
+}
+
+const HomePage: React.FC<HomePageProps> = (props) => {
+  const auth = getAuth()
   return (
     <section className="Add-background-box">
       <div className="title">TO:DO</div>
@@ -8,8 +14,9 @@ const AddTodo = () => {
         <input type="text" className="add-input" />
         <button className="add-button">ADD TO DO</button>
       </div>
+      <button onClick={() => signOut(auth)}>Sign Out</button>
     </section>
   );
 };
 
-export default AddTodo;
+export default HomePage;

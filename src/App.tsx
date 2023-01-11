@@ -1,12 +1,31 @@
+import React from "react";
 import "./css/App.scss";
-import AddTodo from "./components/Add-todo";
-import SignUp from "./components/Signup";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+import { config } from "./configuration/firebase";
+import AuthRoute from "./components/AuthRoute";
 
-const App = () => {
+initializeApp(config.firebaseConfig);
+
+export interface AppProps {}
+
+const App: React.FC<AppProps> = (props) => {
   return (
-      <main className="App">
-        <SignUp />
-      </main>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <AuthRoute>
+              <HomePage />
+            </AuthRoute>
+          }
+        />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
