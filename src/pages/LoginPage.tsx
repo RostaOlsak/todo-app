@@ -28,7 +28,7 @@ const LoginPage = () => {
             <label htmlFor="chk" aria-hidden="true">
               TO:DO/<span className="span-text">SIGNIN</span>
             </label>
-            <button onClick={() => signWithGoogle()} disabled={auther}>
+            <button className="sign-in-button" onClick={() => signWithGoogle()} disabled={auther}>
               Sign in with Google
             </button>
           </form>

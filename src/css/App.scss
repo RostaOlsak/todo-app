@@ -6,6 +6,22 @@
   font-family: Raleway;
 }
 
+.title {
+  margin-top: 3px;
+  margin-left: 15px;
+  color: white;
+  font-weight: 400;
+  font-size: 40px;
+}
+.span-title {
+  color: #F99F38;
+  font-weight: 700;
+}
+.span-title:hover {
+  color: #ed8309;
+  transition: 0.2s ease-in;
+}
+
 .signup-container {
   display: flex;
   justify-content: center;
@@ -19,12 +35,8 @@
   width: 300px;
   height: 200px;
   overflow: hidden;
-  background: transparent;
   border-radius: 10px;
-  box-shadow: 5px 20px 50px #000;
-}
-#chk {
-  display: none;
+  box-shadow: 5px 10px 25px rgb(56, 56, 56);
 }
 .signup {
   display: flex;
@@ -40,62 +52,81 @@ label {
   display: flex;
   margin-bottom: 30px;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
 }
 .span-text {
-  color: #4285F4;
+  color: #0660C7;
 }
 
-input {
-  width: 60%;
-  height: 20px;
-  background: #e0dede;
-  justify-content: center;
+.input-container {
   display: flex;
-  margin: 20px auto;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-}
-button {
-  width: 200px;
-  height: 60px;
-  margin: 10px auto;
   justify-content: center;
-  display: block;
-  color: #fff;
-  background: #4285F4;
-  font-size: 1em;
-  font-weight: bold;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
+  align-items: center;
+}
+
+.input-add {
+  @include input-add-style;
+}
+.homepage-container {
+  height: 100vh;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+.sign-out-container {
+  display: flex;
+  justify-content: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.sign-in-button {
+  @include button-style;
+  background: #0660C7;
+}
+.sign-out-button {
+  @include sign-out-button;
+}
+.sign-out-button:hover {
+  background: #ed8309;
+}
+.user-email {
+  font-weight: 700;
+  color: white;
+  margin-right: 10px;
+  padding-top: 6px;
+}
+.add-button {
+  @include button-style-add;
+  background: #F99F38;
+}
+.add-button:hover {
+  background:#ed8309;
 }
 button:hover {
-  background: #2a6bd4;
+  background: #3876d9;
 }
-.login {
-  height: 460px;
-  background: #eee;
-  border-radius: 3px;
-  transform: translateY(-180px);
-  transition: 0.8s ease-in-out;
-}
-.login label {
-  color: #573b8a;
-  transform: scale(0.6);
+.big-task-input-container {
+  display: flex;
+  justify-content: center;
 }
 
-#chk:checked ~ .login {
-  transform: translateY(-500px);
+.task-input-container:not(:empty) {
+  @include basic-box-structure;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 36.2%;
+  padding: 5px 0px;
+  font-size: 18px;
+  font-weight: 500;
 }
-#chk:checked ~ .login label {
-  transform: scale(1);
+
+.task-input-container:empty {
+  display: none;
 }
-#chk:checked ~ .signup label {
-  transform: scale(0.6);
+
+.tasks-input {
+  @include tasks-input-style;
 }

@@ -4,6 +4,24 @@
   font-family: Raleway;
 }
 
+.title {
+  margin-top: 3px;
+  margin-left: 15px;
+  color: white;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.span-title {
+  color: #F99F38;
+  font-weight: 700;
+}
+
+.span-title:hover {
+  color: #ed8309;
+  transition: 0.2s ease-in;
+}
+
 .signup-container {
   display: flex;
   justify-content: center;
@@ -18,13 +36,8 @@
   width: 300px;
   height: 200px;
   overflow: hidden;
-  background: transparent;
   border-radius: 10px;
-  box-shadow: 5px 20px 50px #000;
-}
-
-#chk {
-  display: none;
+  box-shadow: 5px 10px 25px rgb(56, 56, 56);
 }
 
 .signup {
@@ -42,28 +55,49 @@ label {
   display: flex;
   margin-bottom: 30px;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
 }
 
 .span-text {
-  color: #4285F4;
+  color: #0660C7;
 }
 
-input {
-  width: 60%;
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-add {
+  width: 30%;
   height: 20px;
   background: #e0dede;
   justify-content: center;
   display: flex;
-  margin: 20px auto;
+  margin: 20px 0px;
   padding: 10px;
   border: none;
   outline: none;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
-button {
+.homepage-container {
+  height: 100vh;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-out-container {
+  display: flex;
+  justify-content: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.sign-in-button {
   width: 200px;
   height: 60px;
   margin: 10px auto;
@@ -78,33 +112,93 @@ button {
   border-radius: 5px;
   transition: 0.2s ease-in;
   cursor: pointer;
+  background: #0660C7;
+}
+
+.sign-out-button {
+  width: 80px;
+  height: 32px;
+  color: #fff;
+  background: #F99F38;
+  font-size: 1em;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.sign-out-button:hover {
+  background: #ed8309;
+}
+
+.user-email {
+  font-weight: 700;
+  color: white;
+  margin-right: 10px;
+  padding-top: 6px;
+}
+
+.add-button {
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  background: #4285F4;
+  font-size: 4em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 200;
+  outline: none;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  background: #F99F38;
+}
+
+.add-button:hover {
+  background: #ed8309;
 }
 
 button:hover {
-  background: #2a6bd4;
+  background: #3876d9;
 }
 
-.login {
-  height: 460px;
-  background: #eee;
-  border-radius: 3px;
-  transform: translateY(-180px);
-  transition: 0.8s ease-in-out;
+.big-task-input-container {
+  display: flex;
+  justify-content: center;
 }
 
-.login label {
-  color: #573b8a;
-  transform: scale(0.6);
+.task-input-container:not(:empty) {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 1px rgba(26, 25, 25, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 36.2%;
+  padding: 5px 0px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
-#chk:checked ~ .login {
-  transform: translateY(-500px);
+.task-input-container:empty {
+  display: none;
 }
 
-#chk:checked ~ .login label {
-  transform: scale(1);
-}
-
-#chk:checked ~ .signup label {
-  transform: scale(0.6);
+.tasks-input {
+  width: 95%;
+  height: 20px;
+  background: rgba(43, 43, 43, 0.65);
+  display: flex;
+  margin: 4px 0px;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
 }/*# sourceMappingURL=App.css.map */
