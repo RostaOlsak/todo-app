@@ -7,15 +7,27 @@ const HomePage: React.FC = () => {
 
   const [taskText, setTaskText] = useState("");
   const [tasks, setTasks] = useState<string[]>([]);
+
   const addTask = (text: string) => {
     setTasks([...tasks, text]);
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const addTodo = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+
+    if (taskText === "" || taskText === null) {
+      return;
+    }
+
     addTask(taskText);
     setTaskText("");
   };
+
+  const deleteTodo = (index: number) => {
+    const updatedTasks = tasks.filter((task, i) => i !== index);
+    setTasks(updatedTasks);
+  };
+
   return (
     <section className="homepage-container">
       <div className="footer">
@@ -37,7 +49,7 @@ const HomePage: React.FC = () => {
           className="input-add"
           placeholder="Add a task"
         />
-        <button className="add-button" onClick={handleClick}>
+        <button className="add-button" onClick={addTodo}>
           +
         </button>
       </form>
@@ -45,8 +57,18 @@ const HomePage: React.FC = () => {
         <div className="task-input-container">
           {tasks.map((task, index) => (
             <div className="tasks-input" key={index}>
-              <input type="checkbox"/>
-              {task}
+              <div className="checkbox-with-text">
+                <input type="checkbox" className="todo-input" />
+                <label htmlFor="todo-input" data-content={task}>
+                  {task}
+                </label>
+              </div>
+              <button
+                onClick={() => deleteTodo(index)}
+                className="delete-button"
+              >
+                <span className="delete-text-span">+</span>
+              </button>
             </div>
           ))}
         </div>

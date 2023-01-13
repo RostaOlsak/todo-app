@@ -13,7 +13,7 @@
 }
 
 .span-title {
-  color: #F99F38;
+  color: #f99f38;
   font-weight: 700;
 }
 
@@ -58,7 +58,7 @@ label {
 }
 
 .span-text {
-  color: #0660C7;
+  color: #0660c7;
 }
 
 .input-container {
@@ -112,7 +112,7 @@ label {
   border-radius: 5px;
   transition: 0.2s ease-in;
   cursor: pointer;
-  background: #0660C7;
+  background: #0660c7;
 }
 
 .sign-out-button {
@@ -156,7 +156,7 @@ label {
   border-bottom-right-radius: 5px;
   transition: 0.2s ease-in;
   cursor: pointer;
-  background: #F99F38;
+  background: #f99f38;
 }
 
 .add-button:hover {
@@ -167,14 +167,40 @@ button:hover {
   background: #3876d9;
 }
 
+.delete-button {
+  width: 34px;
+  height: 21px;
+  color: #fff;
+  background: #4285F4;
+  font-size: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 300;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  background: #F99F38;
+}
+
+.delete-button:hover {
+  background: #ed8309;
+}
+
+.delete-text-span {
+  transform: rotate(45deg);
+}
+
 .big-task-input-container {
   display: flex;
   justify-content: center;
 }
 
 .task-input-container:not(:empty) {
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 0px 1px rgba(26, 25, 25, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 1px 15px rgba(26, 26, 25, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -193,12 +219,84 @@ button:hover {
 .tasks-input {
   width: 95%;
   height: 20px;
-  background: rgba(43, 43, 43, 0.65);
+  background: rgba(43, 43, 43, 0.9);
   display: flex;
+  justify-content: space-between;
   margin: 4px 0px;
   padding: 12px;
   border: none;
   outline: none;
   border-radius: 5px;
   color: white;
+}
+
+label {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 10px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+label::before {
+  position: absolute;
+  content: attr(data-content);
+  color: #9c9e9f;
+  -webkit-clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+          clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  -webkit-text-decoration-color: #f99f38;
+          text-decoration-color: #f99f38;
+  transition: -webkit-clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+input[type=checkbox] {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  color: #363839;
+  border: 1px solid #f99f38;
+  border-radius: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+input[type=checkbox]::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+input[type=checkbox]:checked {
+  color: #fff;
+  border-color: #f99f38;
+  background: #f99f38;
+}
+input[type=checkbox]:checked::before {
+  opacity: 1;
+}
+input[type=checkbox]:checked ~ label::before {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.checkbox-with-text {
+  display: flex;
 }/*# sourceMappingURL=App.css.map */
