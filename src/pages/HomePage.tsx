@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getAuth, signOut } from "firebase/auth";
+import edit from "../Icons/edit-xxl.png"
 
 const HomePage: React.FC = () => {
   const auth = getAuth();
@@ -63,12 +64,15 @@ const HomePage: React.FC = () => {
                   {task}
                 </label>
               </div>
-              <button
-                onClick={() => deleteTodo(index)}
-                className="delete-button"
-              >
-                <span className="delete-text-span">+</span>
-              </button>
+              <div className="buttons-container">
+              <button className="edit-button"><img className="img-edit" src={edit} /></button>
+                <button
+                  onClick={() => deleteTodo(index)}
+                  className="delete-button"
+                >
+                  <span className="delete-text-span">+</span>
+                </button>
+              </div>
             </div>
           ))}
         </div>

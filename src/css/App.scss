@@ -106,6 +106,10 @@ button:hover {
   background: #3876d9;
 }
 
+.buttons-container {
+  display: flex;
+}
+
 .delete-button {
   @include button-style-delete;
   background: #F99F38;
@@ -113,6 +117,19 @@ button:hover {
 
 .delete-button:hover {
   background: #ed8309;
+}
+
+.edit-button {
+  @include button-style-edit;
+  background: #F99F38;
+}
+
+.edit-button:hover {
+  background: #ed8309;
+}
+
+.img-edit {
+  width: 15px;
 }
 
 .delete-text-span {
