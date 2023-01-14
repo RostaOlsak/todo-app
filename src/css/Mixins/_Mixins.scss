@@ -23,6 +23,17 @@ $green: #06842c;
   border-bottom-left-radius: 5px;
 }
 
+@mixin input-edit-style {
+  height: 15px;
+  background: #e0dede;
+  margin-left: 8px;
+  margin-right: 5px;
+  padding: 6px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
 @mixin tasks-input-style {
   width: 95%;
   height: 20px;

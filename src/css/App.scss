@@ -63,8 +63,16 @@ label {
   align-items: center;
 }
 
+.edit-container {
+  margin-top: -4px
+}
+
 .input-add {
   @include input-add-style;
+}
+
+.input-edit {
+  @include input-edit-style;
 }
 .homepage-container {
   height: 100vh;
