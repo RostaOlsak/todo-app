@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import editPhoto from "../Icons/editPhoto.png";
+import TaskInput from "./TaskInput";
 
 const HomePage: React.FC = () => {
   const auth = getAuth();
@@ -69,17 +70,10 @@ const HomePage: React.FC = () => {
               <div className="checkbox-with-text">
                 <input type="checkbox" className="todo-input" />
                 {index === editingTaskIndex ? (
-                  <div className="edit-container">
-                    <input
-                      type="text"
-                      value={taskText}
-                      onChange={(e) => setTaskText(e.target.value)}
-                      className="input-edit"
-                    />
-                    <button className="save-button" onClick={() => editTask(index, taskText)}>
-                      Save
-                    </button>
-                  </div>
+                  <TaskInput
+                    task={task}
+                    onSave={(newTask) => editTask(index, newTask)}
+                  />
                 ) : (
                   <label htmlFor="todo-input" data-content={task}>
                     {task}
