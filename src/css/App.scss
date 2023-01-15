@@ -54,7 +54,7 @@ label {
   font-weight: bold;
 }
 .span-text {
-  color: #0660c7;
+  color: #f99f38;
 }
 
 .input-container {
@@ -74,6 +74,13 @@ label {
 .input-edit {
   @include input-edit-style;
 }
+
+.save-button {
+  @include button-style-save;
+}
+.save-button:hover {
+  background: #ed8309;
+}
 .homepage-container {
   height: 100vh;
 }
@@ -89,7 +96,7 @@ label {
 }
 .sign-in-button {
   @include button-style;
-  background: #0660c7;
+  background: #f99f38;
 }
 .sign-out-button {
   @include sign-out-button;
@@ -105,13 +112,12 @@ label {
 }
 .add-button {
   @include button-style-add;
-  background: #f99f38;
 }
 .add-button:hover {
   background: #ed8309;
 }
 button:hover {
-  background: #3876d9;
+  background: #ed8309;
 }
 
 .buttons-container {
@@ -120,7 +126,7 @@ button:hover {
 
 .delete-button {
   @include button-style-delete;
-  background: #F99F38;
+
 }
 
 .delete-button:hover {
@@ -129,7 +135,6 @@ button:hover {
 
 .edit-button {
   @include button-style-edit;
-  background: #F99F38;
 }
 
 .edit-button:hover {
@@ -156,7 +161,7 @@ button:hover {
   align-items: center;
   border-radius: 5px;
   width: 36.2%;
-  padding: 5px 0px;
+  padding: 5px 5px;
   font-size: 18px;
   font-weight: 500;
 }
@@ -172,7 +177,7 @@ button:hover {
 label {
   position: relative;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   padding: 0 10px 0;
   user-select: none;

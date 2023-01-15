@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
                       onChange={(e) => setTaskText(e.target.value)}
                       className="input-edit"
                     />
-                    <button onClick={() => editTask(index, taskText)}>
+                    <button className="save-button" onClick={() => editTask(index, taskText)}>
                       Save
                     </button>
                   </div>

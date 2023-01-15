@@ -10,7 +10,7 @@ $green: #06842c;
 }
 
 @mixin input-add-style {
-  width: 30%;
+  width: 30.4%;
   height: 20px;
   background: #e0dede;
   justify-content: center;
@@ -35,7 +35,7 @@ $green: #06842c;
 }
 
 @mixin tasks-input-style {
-  width: 95%;
+  width: 96%;
   height: 20px;
   background: rgba(43, 43, 43, 0.9);
   display: flex;
@@ -49,6 +49,7 @@ $green: #06842c;
 }
 
 @mixin button-style {
+  width: 100%;
   width: 200px;
   height: 60px;
   margin: 10px auto;
@@ -68,7 +69,7 @@ $green: #06842c;
   width: 100px;
   height: 40px;
   color: #fff;
-  background: #4285F4;
+  background: #F99F38;
   font-size: 4em;
   align-items: center;
   justify-content: center;
@@ -82,11 +83,27 @@ $green: #06842c;
   cursor: pointer;
 }
 
+@mixin button-style-save {
+  width: 70px;
+  height: 27.9px;
+  color: #fff;
+  background: #f99f38;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
 @mixin button-style-delete {
   width: 34px;
   height: 21px;
   color: #fff;
-  background: #4285F4;
+  background: #F99F38;
   font-size: 50px;
   align-items: center;
   justify-content: center;
@@ -103,7 +120,7 @@ $green: #06842c;
   width: 34px;
   height: 21px;
   color: #fff;
-  background: #4285F4;
+  background: #F99F38;
   font-size: 50px;
   align-items: center;
   justify-content: center;
