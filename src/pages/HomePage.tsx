@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import editPhoto from "../Icons/editPhoto.png";
 import TaskInput from "./TaskInput";
@@ -11,8 +11,16 @@ const HomePage: React.FC = () => {
   const [tasks, setTasks] = useState<string[]>([]);
   const [editingTaskIndex, setEditingTaskIndex] = useState(-1);
 
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+    if (storedTasks) {
+      setTasks(storedTasks);
+    }
+  }, []);
+
   const addTask = (text: string) => {
     setTasks([...tasks, text]);
+    localStorage.setItem("tasks", JSON.stringify([...tasks, text]));
   };
 
   const addTodo = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -29,12 +37,14 @@ const HomePage: React.FC = () => {
   const deleteTodo = (index: number) => {
     const updatedTasks = tasks.filter((task, i) => i !== index);
     setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
   const editTask = (index: number, newTaskText: string) => {
     const updatedTasks = [...tasks];
     updatedTasks[index] = newTaskText;
     setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
     setEditingTaskIndex(-1);
   };
 
