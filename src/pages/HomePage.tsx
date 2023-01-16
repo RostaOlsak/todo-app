@@ -10,6 +10,7 @@ const HomePage: React.FC = () => {
   const [taskText, setTaskText] = useState("");
   const [tasks, setTasks] = useState<string[]>([]);
   const [editingTaskIndex, setEditingTaskIndex] = useState(-1);
+  const [checkedTasks, setCheckedTasks] = useState<boolean[]>([]);
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
@@ -17,6 +18,13 @@ const HomePage: React.FC = () => {
       setTasks(storedTasks);
     }
   }, []);
+
+  useEffect(() => {
+    const storedCheckedTasks = JSON.parse(localStorage.getItem("checkedTasks") || "[]");
+    if (storedCheckedTasks) {
+        setCheckedTasks(storedCheckedTasks);
+    }
+}, []);
 
   const addTask = (text: string) => {
     setTasks([...tasks, text]);
@@ -78,7 +86,20 @@ const HomePage: React.FC = () => {
           {tasks.map((task, index) => (
             <div className="tasks-input" key={index}>
               <div className="checkbox-with-text">
-                <input type="checkbox" className="todo-input" />
+                <input
+                  type="checkbox"
+                  className="todo-input"
+                  checked={checkedTasks[index]}
+                  onChange={() => {
+                    const updatedCheckedTasks = [...checkedTasks];
+                    updatedCheckedTasks[index] = !checkedTasks[index];
+                    setCheckedTasks(updatedCheckedTasks);
+                    localStorage.setItem(
+                      "checkedTasks",
+                      JSON.stringify(updatedCheckedTasks)
+                    );
+                  }}
+                />
                 {index === editingTaskIndex ? (
                   <TaskInput
                     task={task}
