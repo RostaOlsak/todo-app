@@ -13,18 +13,26 @@ const HomePage: React.FC = () => {
   const [checkedTasks, setCheckedTasks] = useState<boolean[]>([]);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem(`tasks-${userName}`) || "[]");
-    if (storedTasks) {
-      setTasks(storedTasks);
+    if (userName) {
+      const storedTasks = JSON.parse(
+        localStorage.getItem(`tasks-${userName}`) || "[]"
+      );
+      if (storedTasks) {
+        setTasks(storedTasks);
+      }
     }
-  }, []);
+  }, [userName]);
 
   useEffect(() => {
-    const storedCheckedTasks = JSON.parse(localStorage.getItem(`checkedTasks-${userName}`) || "[]");
-    if (storedCheckedTasks) {
+    if (userName) {
+      const storedCheckedTasks = JSON.parse(
+        localStorage.getItem(`checkedTasks-${userName}`) || "[]"
+      );
+      if (storedCheckedTasks) {
         setCheckedTasks(storedCheckedTasks);
+      }
     }
-}, []);
+  }, [userName]);
 
   const addTask = (text: string) => {
     setTasks([...tasks, text]);
@@ -48,8 +56,11 @@ const HomePage: React.FC = () => {
     setTasks(updatedTasks);
     setCheckedTasks(updatedCheckedTasks);
     localStorage.setItem(`tasks-${userName}`, JSON.stringify(updatedTasks));
-    localStorage.setItem(`checkedTasks-${userName}`, JSON.stringify(updatedCheckedTasks));
-};
+    localStorage.setItem(
+      `checkedTasks-${userName}`,
+      JSON.stringify(updatedCheckedTasks)
+    );
+  };
 
   const editTask = (index: number, newTaskText: string) => {
     const updatedTasks = [...tasks];
@@ -67,9 +78,16 @@ const HomePage: React.FC = () => {
         </div>
         <div className="sign-out-container">
           <div className="user-email">{userName}</div>
-          <button className="sign-out-button" onClick={() => signOut(auth)}>
-            Sign Out
-          </button>
+          {userName && (
+            <button
+              className="sign-out-button"
+              onClick={() => {
+                signOut(auth);
+              }}
+            >
+              Sign Out
+            </button>
+          )}
         </div>
       </div>
       <form className="input-container">
