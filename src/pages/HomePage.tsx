@@ -5,38 +5,38 @@ import TaskInput from "./TaskInput";
 
 const HomePage: React.FC = () => {
   const auth = getAuth();
-  const userName = auth.currentUser?.email;
+  const user = auth.currentUser;
 
   const [taskText, setTaskText] = useState("");
   const [tasks, setTasks] = useState<string[]>([]);
   const [editingTaskIndex, setEditingTaskIndex] = useState(-1);
   const [checkedTasks, setCheckedTasks] = useState<boolean[]>([]);
-
+  
   useEffect(() => {
-    if (userName) {
+    if (user) {
       const storedTasks = JSON.parse(
-        localStorage.getItem(`tasks-${userName}`) || "[]"
+        localStorage.getItem(`tasks-${user.uid}`) || "[]"
       );
       if (storedTasks) {
         setTasks(storedTasks);
       }
     }
-  }, [userName]);
+  }, [user]);
 
   useEffect(() => {
-    if (userName) {
+    if (user) {
       const storedCheckedTasks = JSON.parse(
-        localStorage.getItem(`checkedTasks-${userName}`) || "[]"
+        localStorage.getItem(`checkedTasks-${user.uid}`) || "[]"
       );
       if (storedCheckedTasks) {
         setCheckedTasks(storedCheckedTasks);
       }
     }
-  }, [userName]);
+  }, [user]);
 
   const addTask = (text: string) => {
     setTasks([...tasks, text]);
-    localStorage.setItem(`tasks-${userName}`, JSON.stringify([...tasks, text]));
+    localStorage.setItem(`tasks-${user?.uid}`, JSON.stringify([...tasks, text]));
   };
 
   const addTodo = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -55,9 +55,9 @@ const HomePage: React.FC = () => {
     const updatedCheckedTasks = checkedTasks.filter((task, i) => i !== index);
     setTasks(updatedTasks);
     setCheckedTasks(updatedCheckedTasks);
-    localStorage.setItem(`tasks-${userName}`, JSON.stringify(updatedTasks));
+    localStorage.setItem(`tasks-${user?.uid}`, JSON.stringify(updatedTasks));
     localStorage.setItem(
-      `checkedTasks-${userName}`,
+      `checkedTasks-${user?.uid}`,
       JSON.stringify(updatedCheckedTasks)
     );
   };
@@ -66,7 +66,7 @@ const HomePage: React.FC = () => {
     const updatedTasks = [...tasks];
     updatedTasks[index] = newTaskText;
     setTasks(updatedTasks);
-    localStorage.setItem(`tasks-${userName}`, JSON.stringify(updatedTasks));
+    localStorage.setItem(`tasks-${user?.uid}`, JSON.stringify(updatedTasks));
     setEditingTaskIndex(-1);
   };
 
@@ -77,8 +77,8 @@ const HomePage: React.FC = () => {
           TO<span className="span-title">:DO</span>
         </div>
         <div className="sign-out-container">
-          <div className="user-email">{userName}</div>
-          {userName && (
+          <div className="user-email">{user?.email}</div>
+          {user && (
             <button
               className="sign-out-button"
               onClick={() => {
@@ -116,7 +116,7 @@ const HomePage: React.FC = () => {
                     updatedCheckedTasks[index] = !checkedTasks[index];
                     setCheckedTasks(updatedCheckedTasks);
                     localStorage.setItem(
-                      `checkedTasks-${userName}`,
+                      `checkedTasks-${user?.uid}`,
                       JSON.stringify(updatedCheckedTasks)
                     );
                   }}
