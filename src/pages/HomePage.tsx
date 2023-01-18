@@ -78,8 +78,7 @@ const HomePage: React.FC = () => {
         </div>
         <div className="sign-out-container">
           <div className="user-email">{user?.email}</div>
-          {user && (
-            <button
+          <button
               className="sign-out-button"
               onClick={() => {
                 signOut(auth);
@@ -87,7 +86,6 @@ const HomePage: React.FC = () => {
             >
               Sign Out
             </button>
-          )}
         </div>
       </div>
       <form className="input-container">
