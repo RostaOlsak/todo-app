@@ -13,14 +13,14 @@ const HomePage: React.FC = () => {
   const [checkedTasks, setCheckedTasks] = useState<boolean[]>([]);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+    const storedTasks = JSON.parse(localStorage.getItem(`tasks-${userName}`) || "[]");
     if (storedTasks) {
       setTasks(storedTasks);
     }
   }, []);
 
   useEffect(() => {
-    const storedCheckedTasks = JSON.parse(localStorage.getItem("checkedTasks") || "[]");
+    const storedCheckedTasks = JSON.parse(localStorage.getItem(`checkedTasks-${userName}`) || "[]");
     if (storedCheckedTasks) {
         setCheckedTasks(storedCheckedTasks);
     }
@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
 
   const addTask = (text: string) => {
     setTasks([...tasks, text]);
-    localStorage.setItem("tasks", JSON.stringify([...tasks, text]));
+    localStorage.setItem(`tasks-${userName}`, JSON.stringify([...tasks, text]));
   };
 
   const addTodo = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -44,15 +44,18 @@ const HomePage: React.FC = () => {
 
   const deleteTodo = (index: number) => {
     const updatedTasks = tasks.filter((task, i) => i !== index);
+    const updatedCheckedTasks = checkedTasks.filter((task, i) => i !== index);
     setTasks(updatedTasks);
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-  };
+    setCheckedTasks(updatedCheckedTasks);
+    localStorage.setItem(`tasks-${userName}`, JSON.stringify(updatedTasks));
+    localStorage.setItem(`checkedTasks-${userName}`, JSON.stringify(updatedCheckedTasks));
+};
 
   const editTask = (index: number, newTaskText: string) => {
     const updatedTasks = [...tasks];
     updatedTasks[index] = newTaskText;
     setTasks(updatedTasks);
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    localStorage.setItem(`tasks-${userName}`, JSON.stringify(updatedTasks));
     setEditingTaskIndex(-1);
   };
 
@@ -95,7 +98,7 @@ const HomePage: React.FC = () => {
                     updatedCheckedTasks[index] = !checkedTasks[index];
                     setCheckedTasks(updatedCheckedTasks);
                     localStorage.setItem(
-                      "checkedTasks",
+                      `checkedTasks-${userName}`,
                       JSON.stringify(updatedCheckedTasks)
                     );
                   }}
