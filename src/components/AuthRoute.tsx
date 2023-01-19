@@ -15,7 +15,10 @@ const AuthRoute: React.FC<AuthRouteProps> = (props) => {
   useEffect(() => {
     const AuthCheck = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setLoading(false);
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false)
+        }, 1)
       } else {
         console.log("Cant access this page");
         navigate("/login");
