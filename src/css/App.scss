@@ -239,3 +239,18 @@ input[type="checkbox"] {
 .checkbox-with-text {
   display: flex
 }
+
+
+.loading-text {
+  font-size: 35px;
+  font-family: Raleway;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-dots {
+  color: #f99f38;
+}

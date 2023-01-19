@@ -13,22 +13,22 @@ const AuthRoute: React.FC<AuthRouteProps> = (props) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const AuthCheck = onAuthStateChanged(auth, (user) => {
+    setLoading(true);
+    const AuthCheck = onAuthStateChanged(auth, user => {
       if (user) {
-        setLoading(true);
-        setTimeout(() => {
-          setLoading(false)
-        }, 1)
+        setLoading(false);
       } else {
-        console.log("Cant access this page");
-        navigate("/login");
+        console.log('Cant access this page');
+        navigate('/login');
       }
     });
 
     return () => AuthCheck();
-  }, [auth]);
+  }, []);
 
-  if (loading) return <p>Wait a bit ...</p>;
+  console.log(auth)
+
+  if (loading) return <p className="loading-text">LOADING<span className="loading-dots">...</span></p>;
 
   return <>{children}</>;
 };
