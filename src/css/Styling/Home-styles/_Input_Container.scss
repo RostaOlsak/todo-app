@@ -1,0 +1,18 @@
+@import "../../Mixins/Mixins";
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-add {
+  @include input-add-style;
+}
+
+.add-button {
+  @include button-style-add;
+}
+.add-button:hover {
+  background: #ed8309;
+}

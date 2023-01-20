@@ -1,0 +1,29 @@
+@import "../../Mixins/Mixins";
+
+.buttons-container {
+  display: flex;
+}
+
+.edit-button {
+  @include button-style-edit;
+}
+
+.edit-button:hover {
+  background: #ed8309;
+}
+
+.img-edit {
+  width: 15px;
+}
+
+.delete-button {
+  @include button-style-delete;
+}
+
+.delete-button:hover {
+  background: #ed8309;
+}
+
+.delete-text-span {
+  transform: rotate(45deg);
+}

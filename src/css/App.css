@@ -1,26 +1,3 @@
-* {
-  padding: 0;
-  font-family: Raleway;
-}
-
-.title {
-  margin-top: 3px;
-  margin-left: 15px;
-  color: white;
-  font-weight: 400;
-  font-size: 40px;
-}
-
-.span-title {
-  color: #f99f38;
-  font-weight: 700;
-}
-
-.span-title:hover {
-  color: #ed8309;
-  transition: 0.2s ease-in;
-}
-
 .signup-container {
   display: flex;
   justify-content: center;
@@ -47,26 +24,127 @@
   height: 100%;
 }
 
-label {
-  color: #fff;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-weight: bold;
+.login-label {
+  margin-top: 10px;
+  font-size: 22px;
 }
 
 .span-text {
   color: #f99f38;
+  font-weight: 600;
+}
+
+.sign-in-button {
+  width: 100%;
+  width: 200px;
+  height: 60px;
+  margin: 10px auto;
+  margin-top: 19px;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: #4285F4;
+  font-size: 1em;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  background: #f99f38;
+}
+
+.sign-in-button:hover {
+  background: #ed8309;
+}
+
+.google-g1, .google-g2, .google-o1, .google-o2, .google-l, .google-e {
+  transition: 0.1s;
+}
+
+.sign-in-button:hover .google-g1 {
+  color: #509cff;
+}
+
+.sign-in-button:hover .google-o1 {
+  color: red;
+}
+
+.sign-in-button:hover .google-o2 {
+  color: yellow;
+}
+
+.sign-in-button:hover .google-g2 {
+  color: #509cff;
+}
+
+.sign-in-button:hover .google-l {
+  color: green;
+}
+
+.sign-in-button:hover .google-e {
+  color: red;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  margin-top: 3px;
+  margin-left: 15px;
+  color: white;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.span-title {
+  color: #f99f38;
+  font-weight: 700;
+}
+
+.span-title:hover {
+  color: #ed8309;
+  transition: 0.2s ease-in;
+}
+
+.sign-out-container {
+  display: flex;
+  justify-content: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.user-email {
+  font-weight: 700;
+  color: white;
+  margin-right: 10px;
+  padding-top: 6px;
+}
+
+.sign-out-button {
+  width: 80px;
+  height: 32px;
+  color: #fff;
+  background: #F99F38;
+  font-size: 1em;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.sign-out-button:hover {
+  background: #ed8309;
 }
 
 .input-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.edit-container {
-  margin-top: -4px;
 }
 
 .input-add {
@@ -81,6 +159,70 @@ label {
   outline: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.add-button {
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  background: #F99F38;
+  font-size: 4em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 200;
+  outline: none;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #ed8309;
+}
+
+.tasks-container {
+  display: flex;
+  justify-content: center;
+}
+
+.task-input-container:not(:empty) {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 1px 15px rgba(26, 26, 25, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 36.2%;
+  padding: 5px 5px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.task-input-container:empty {
+  display: none;
+}
+
+.tasks-input {
+  width: 96%;
+  height: 20px;
+  background: rgba(43, 43, 43, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2px 0px;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.checkbox-with-text {
+  display: flex;
 }
 
 .input-edit {
@@ -114,116 +256,8 @@ label {
   background: #ed8309;
 }
 
-.homepage-container {
-  height: 100vh;
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.sign-out-container {
-  display: flex;
-  justify-content: right;
-  margin-right: 10px;
-  margin-top: 10px;
-}
-
-.sign-in-button {
-  width: 100%;
-  width: 200px;
-  height: 60px;
-  margin: 10px auto;
-  margin-top: 19px;
-  justify-content: center;
-  display: block;
-  color: #fff;
-  background: #4285F4;
-  font-size: 1em;
-  font-weight: bold;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
-  background: #f99f38;
-}
-
-.sign-out-button {
-  width: 80px;
-  height: 32px;
-  color: #fff;
-  background: #F99F38;
-  font-size: 1em;
-  font-weight: bold;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
-}
-
-.sign-out-button:hover {
-  background: #ed8309;
-}
-
-.user-email {
-  font-weight: 700;
-  color: white;
-  margin-right: 10px;
-  padding-top: 6px;
-}
-
-.add-button {
-  width: 100px;
-  height: 40px;
-  color: #fff;
-  background: #F99F38;
-  font-size: 4em;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  font-weight: 200;
-  outline: none;
-  border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
-}
-
-.add-button:hover {
-  background: #ed8309;
-}
-
-button:hover {
-  background: #ed8309;
-}
-
 .buttons-container {
   display: flex;
-}
-
-.delete-button {
-  width: 34px;
-  height: 21px;
-  color: #fff;
-  background: #F99F38;
-  font-size: 50px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  font-weight: 300;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
-}
-
-.delete-button:hover {
-  background: #ed8309;
 }
 
 .edit-button {
@@ -252,58 +286,51 @@ button:hover {
   width: 15px;
 }
 
+.delete-button {
+  width: 34px;
+  height: 21px;
+  color: #fff;
+  background: #F99F38;
+  font-size: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 300;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #ed8309;
+}
+
 .delete-text-span {
   transform: rotate(45deg);
 }
 
-.big-task-input-container {
-  display: flex;
-  justify-content: center;
-}
-
-.task-input-container:not(:empty) {
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 1px 1px 15px rgba(26, 26, 25, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  width: 36.2%;
-  padding: 5px 5px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.task-input-container:empty {
-  display: none;
-}
-
-.tasks-input {
-  width: 96%;
-  height: 20px;
-  background: rgba(43, 43, 43, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 2px 0px;
-  padding: 12px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
+.loading-text {
+  font-size: 35px;
+  font-family: Raleway;
   color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-dots {
+  color: #f99f38;
 }
 
 label {
-  position: relative;
-  cursor: pointer;
-  font-size: 17px;
-  font-weight: 600;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   padding: 0 10px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 label::before {
   position: absolute;
@@ -318,11 +345,6 @@ label::before {
   transition: -webkit-clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.login-label {
-  margin-top: 10px;
-  font-size: 22px;
 }
 
 input[type=checkbox] {
@@ -368,20 +390,11 @@ input[type=checkbox]:checked ~ label::before {
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.checkbox-with-text {
-  display: flex;
-}
-
-.loading-text {
-  font-size: 35px;
+* {
+  padding: 0;
   font-family: Raleway;
-  color: white;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.loading-dots {
-  color: #f99f38;
+.homepage-container {
+  height: 100vh;
 }/*# sourceMappingURL=App.css.map */

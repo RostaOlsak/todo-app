@@ -1,0 +1,74 @@
+@import "../../Mixins/Mixins";
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 10px 25px rgb(56, 56, 56);
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-label {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.span-text {
+  color: #f99f38;
+  font-weight: 600;
+}
+
+.sign-in-button {
+  @include button-style;
+  background: #f99f38;
+}
+
+.sign-in-button:hover {
+  background: #ed8309;
+}
+
+.google-g1, .google-g2, .google-o1, .google-o2, .google-l, .google-e {
+  transition: .1s;
+}
+
+.sign-in-button:hover .google-g1 {
+  color: #509cff;
+}
+
+.sign-in-button:hover .google-o1 {
+  color: red;
+}
+
+.sign-in-button:hover .google-o2 {
+  color: yellow;
+}
+
+.sign-in-button:hover .google-g2 {
+  color: #509cff;
+}
+
+.sign-in-button:hover .google-l {
+  color: green;
+}
+
+.sign-in-button:hover .google-e {
+  color: red;
+}

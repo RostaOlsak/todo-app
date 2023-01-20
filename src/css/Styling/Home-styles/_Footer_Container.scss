@@ -1,0 +1,45 @@
+@import "../../Mixins/Mixins";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  margin-top: 3px;
+  margin-left: 15px;
+  color: white;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.span-title {
+  color: #f99f38;
+  font-weight: 700;
+}
+.span-title:hover {
+  color: #ed8309;
+  transition: 0.2s ease-in;
+}
+
+.sign-out-container {
+  display: flex;
+  justify-content: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.user-email {
+  font-weight: 700;
+  color: white;
+  margin-right: 10px;
+  padding-top: 6px;
+}
+
+.sign-out-button {
+  @include sign-out-button;
+}
+
+.sign-out-button:hover {
+  background: #ed8309;
+}

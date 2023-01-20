@@ -100,7 +100,7 @@ const HomePage: React.FC = () => {
           +
         </button>
       </form>
-      <div className="big-task-input-container">
+      <div className="tasks-container">
         <div className="task-input-container">
           {tasks.map((task, index) => (
             <div className="tasks-input" key={index}>

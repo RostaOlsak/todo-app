@@ -18,7 +18,6 @@ const AuthRoute: React.FC<AuthRouteProps> = (props) => {
       if (user) {
         setLoading(false);
       } else {
-        console.log('Cant access this page');
         navigate('/login');
       }
     });

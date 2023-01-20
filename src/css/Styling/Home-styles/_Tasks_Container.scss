@@ -1,0 +1,31 @@
+@import "../../Mixins/Mixins";
+
+.tasks-container {
+  display: flex;
+  justify-content: center;
+}
+
+.task-input-container:not(:empty) {
+  @include basic-box-structure;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 36.2%;
+  padding: 5px 5px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.task-input-container:empty {
+  display: none;
+}
+
+.tasks-input {
+  @include tasks-input-style;
+}
+
+.checkbox-with-text {
+  display: flex;
+}
