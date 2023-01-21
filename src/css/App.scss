@@ -17,3 +17,173 @@
 .homepage-container {
   height: 100vh;
 }
+@media screen and (max-width: 393px) {
+  .main {
+    width: 370px;
+    height: 250px;
+  }
+  .login-label {
+    font-size: 35px;
+  }
+  .sign-in-button {
+    width: 220px;
+    height: 70px;
+    font-size: 19.2px;
+  }
+  .title {
+    font-size: 55px;
+  }
+  .user-email {
+    display: none;
+  }
+  .sign-out-button {
+    width: 100px;
+    height: 40px;
+    font-size: 21px;
+    margin-top: 6px;
+  }
+  .input-add {
+    width: 73%;
+    height: 25.5px;
+    margin: 25px 0px;
+    padding: 7px;
+    font-size: 15px;
+  }
+  .add-button {
+    width: 65px;
+    height: 40.4px;
+    font-size: 64px;
+  }
+  .task-input-container:not(:empty) {
+    width: 93%;
+    padding: 4px 0px;
+    font-size: 15px;
+  }
+  .tasks-input {
+    width: 90%;
+    height: 30px;
+    margin: 3px 0px;
+  }
+  .edit-button {
+    width: 34px;
+    height: 28px;
+    margin-right: 5px;
+  }
+  .delete-button {
+    width: 34px;
+    height: 28px;
+  }
+  label {
+    padding: 0 10px 0;
+  }
+  input[type="checkbox"] {
+    width: 1.8em;
+    height: 1.8em;
+    &::before {
+      left: 7px;
+      height: 14px;
+    }
+  }
+  .input-edit {
+    width: 150px;
+    height: 14.7px;
+    margin-top: 3.5px;
+    margin-left: 4px;
+    font-size: 15px;
+    margin-right: 3px;
+  }
+  .save-button {
+    width: 45px;
+    height: 27.9px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .loading-text {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .main {
+    width: 370px;
+    height: 250px;
+  }
+  .login-label {
+    font-size: 35px;
+  }
+  .sign-in-button {
+    width: 220px;
+    height: 70px;
+    font-size: 19.2px;
+  }
+  .title {
+    font-size: 60px;
+  }
+  .user-email {
+    font-size: 24px;
+    margin-right: 16px;
+    padding-top: 9px;
+  }
+  .sign-out-button {
+    width: 120px;
+    height: 50px;
+    font-size: 21px;
+  }
+  .input-add {
+    width: 36%;
+    height: 35.7px;
+    margin: 25px 0px;
+    padding: 14px;
+    font-size: 25px;
+  }
+  .add-button {
+    width: 130px;
+    height: 64px;
+    font-size: 96px;
+  }
+  .task-input-container:not(:empty) {
+    width: 41.7%;
+    padding: 7px 0px;
+    font-size: 22px;
+  }
+  .tasks-input {
+    width: 96%;
+    height: 40px;
+    margin: 3px 0px;
+  }
+  .edit-button {
+    width: 54px;
+    height: 31px;
+    margin-right: 10px;
+  }
+  .delete-button {
+    width: 54px;
+    height: 31px;
+  }
+  label {
+    padding: 0 10px 0;
+  }
+  input[type="checkbox"] {
+    width: 2.1em;
+    height: 2.1em;
+    &::before {
+      left: 10px;
+      height: 18px;
+    }
+  }
+  .input-edit {
+    width: 300px;
+    height: 23.7px;
+    margin-left: 8px;
+    font-size: 18px;
+  }
+  .save-button {
+    height: 36px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .loading-text {
+    font-size: 50px;
+  }
+}
+

@@ -95,6 +95,7 @@ const HomePage: React.FC = () => {
       <form className="input-container">
         <input
           type="text"
+          maxLength={45}
           value={taskText}
           onChange={(e) => setTaskText(e.target.value)}
           className="input-add"

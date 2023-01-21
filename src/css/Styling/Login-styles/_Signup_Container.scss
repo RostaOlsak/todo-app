@@ -11,8 +11,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 200px;
+  width: 320px;
+  height: 220px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 5px 10px 25px rgb(56, 56, 56);
@@ -28,12 +28,17 @@
 
 .login-label {
   margin-top: 10px;
-  font-size: 22px;
+  font-size: 30px;
 }
 
 .span-text {
   color: #f99f38;
   font-weight: 600;
+}
+
+.span-text:hover {
+color: #ed8309;
+transition: 0.3s;
 }
 
 .sign-in-button {
