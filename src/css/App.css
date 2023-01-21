@@ -153,7 +153,7 @@
 }
 
 .input-add {
-  width: 30.4%;
+  width: 40%;
   height: 20px;
   background: #e0dede;
   justify-content: center;
@@ -201,8 +201,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  width: 36.2%;
-  padding: 5px 5px;
+  width: 46.2%;
+  padding: 5px 0px;
   font-size: 17px;
   font-weight: 500;
 }
@@ -517,7 +517,7 @@ input[type=checkbox]:checked ~ label::before {
     font-size: 21px;
   }
   .input-add {
-    width: 36%;
+    width: 42%;
     height: 35.7px;
     margin: 25px 0px;
     padding: 14px;
@@ -529,7 +529,7 @@ input[type=checkbox]:checked ~ label::before {
     font-size: 96px;
   }
   .task-input-container:not(:empty) {
-    width: 41.7%;
+    width: 47.7%;
     padding: 7px 0px;
     font-size: 22px;
   }

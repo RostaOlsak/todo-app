@@ -12,7 +12,7 @@ interface TaskInputProps {
       <div>
         <input
           type="text"
-          maxLength={45}
+          maxLength={50}
           value={editingTask}
           onChange={(e) => setEditingTask(e.target.value)}
           className="input-edit"
