@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import editPhoto from "../Icons/editPhoto.png";
-import TaskInput from "./TaskInput";
+import TaskInput from "../components/TaskInput";
 
 const HomePage: React.FC = () => {
   const auth = getAuth();
@@ -11,7 +11,9 @@ const HomePage: React.FC = () => {
   const [tasks, setTasks] = useState<string[]>([]);
   const [editingTaskIndex, setEditingTaskIndex] = useState(-1);
   const [checkedTasks, setCheckedTasks] = useState<boolean[]>([]);
-  
+
+
+  //useEffects for getting data from local storage
   useEffect(() => {
     if (user) {
       const storedTasks = JSON.parse(
@@ -34,6 +36,8 @@ const HomePage: React.FC = () => {
     }
   }, [user]);
 
+
+// Helper functions ADD/DELETE/EDIT
   const addTask = (text: string) => {
     setTasks([...tasks, text]);
     localStorage.setItem(`tasks-${user?.uid}`, JSON.stringify([...tasks, text]));
