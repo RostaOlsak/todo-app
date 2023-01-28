@@ -13,6 +13,14 @@ You can:
 
 and API in use here is from: https://firebase.google.com/
 
+### Login page
+
+
+
+### Home page with tasks
+
+![todo-main](https://user-images.githubusercontent.com/120781263/215262753-fcaba620-83a2-4cd8-9a17-2ec52338ed91.png)
+
 ### Prerequisites
 
 If you dont have npm installed:
