@@ -6,6 +6,7 @@ You can:
 * Create tasks
 * Update them
 * Delete them
+* Check/uncheck tasks
 
 ### Built With
 
