@@ -2,7 +2,9 @@
 # TODO app with login authentication/Local storage
 TODO app with Local storage, CRUD functions and Login google authentication (firebase) so every user can have his own tasks. API key would be normally ignored in .env file but for the purpose of just showing my app i included it so others dont need to manually add it.
 
-You can:
+functions:
+* Sign in/ Sign out
+* Data saved between sessions
 * Create tasks
 * Update them
 * Delete them
