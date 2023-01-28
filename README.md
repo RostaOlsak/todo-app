@@ -19,7 +19,7 @@ and API in use here is from: https://firebase.google.com/
 
 ### Home page with tasks
 
-![todo-main](https://user-images.githubusercontent.com/120781263/215262753-fcaba620-83a2-4cd8-9a17-2ec52338ed91.png)
+![todo-home](https://user-images.githubusercontent.com/120781263/215263171-917497e4-8180-4e84-b74a-a2a796be3f88.png)
 
 ### Prerequisites
 
